@@ -9,6 +9,9 @@ import SwiftUI
 
 @main
 struct CufiApp: App {
+    init() {
+        UserDefaults.standard.register(defaults: ["UseFloatingTabBar": false])
+    }
     var body: some Scene {
         WindowGroup {
             ContentView()
