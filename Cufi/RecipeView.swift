@@ -71,7 +71,7 @@ struct RecipeView: View {
                             }
                             .padding(5)
                     }
-                    GridRow {
+                    HStack {
                         RoundedRectangle(cornerRadius: 20, style: .continuous)
                             .fill(Color(uiColor: .systemGray6))
                             .frame(height: 100)
@@ -91,6 +91,21 @@ struct RecipeView: View {
                             .frame(height: 100)
                             .overlay(alignment: .leading) {
                                 VStack(alignment: .leading) {
+                                    Label("Duration", systemImage: "clock.arrow.trianglehead.clockwise.rotate.90.path.dotted")
+                                        .font(.title3.bold())
+                                    Text("\(recipe.brewDuration)s")
+                                        .font(.title.bold())
+                                }
+                                .padding(.leading)
+                            }
+                            .padding(5)
+                    }
+                    HStack {
+                        RoundedRectangle(cornerRadius: 20, style: .continuous)
+                            .fill(Color(uiColor: .systemGray6))
+                            .frame(height: 100)
+                            .overlay(alignment: .leading) {
+                                VStack(alignment: .leading) {
                                     Label("Dripper", systemImage: "field.of.view.wide.fill")
                                         .font(.title3.bold())
                                     Text("\(recipe.dripper)")
@@ -104,21 +119,22 @@ struct RecipeView: View {
                             .frame(height: 100)
                             .overlay(alignment: .leading) {
                                 VStack(alignment: .leading) {
-                                    Label("Duration", systemImage: "clock.arrow.trianglehead.clockwise.rotate.90.path.dotted")
+                                    Label("Last Updated", systemImage: "calendar")
                                         .font(.title3.bold())
-                                    Text("\(recipe.brewDuration)s")
+                                    Text("\(recipe.lastUpdated)")
                                         .font(.title.bold())
                                 }
                                 .padding(.leading)
                             }
                             .padding(5)
                     }
+                    Spacer()
                 }
             }
         }
-        .padding(.horizontal, 100)
+        .padding(.horizontal, 80)
         .padding(.top)
-        .navigationTitle("Filter Cufi Recipe: \(recipe.title)")
+        .navigationTitle("\(recipe.title)")
         .onReceive(orientationChangedNotification) { _ in
             if UIDevice.current.orientation.rawValue <= 4 {
                 self.currentOrientation = UIDevice.current.orientation

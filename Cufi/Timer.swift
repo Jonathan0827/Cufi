@@ -32,11 +32,13 @@ struct TimerView: View {
                 .rotationEffect(.degrees(-90))
             if !done {
                 VStack {
-                    HStack(alignment: .center) {
-                        Text("\(steps[step].what)")
+                    Text("\(steps[step].what)")
                             .font(.title3.bold())
+                    if steps[step].comment != "" {
+                        Text("\(steps[step].comment)")
+                            .font(.caption)
                     }
-                    Text("\(Int(remaining))s")
+                    Text("\(Int(ceil(remaining)))s")
                         .font(.largeTitle.bold())
                     Text("Water Target: \(targetWater)ml")
                     Text("Water to Pour: \(steps[step].qty)ml")
@@ -65,10 +67,10 @@ struct TimerView: View {
     }
     func timerStart() {
         withAnimation {
-            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+            timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { _ in
                 withAnimation {
-                    remaining -= 1
-                    if remaining == 0 {
+                    remaining -= 0.01
+                    if remaining <= 0 {
                         if step == recipe.steps.count - 1 {
                             withAnimation {
                                 done = true

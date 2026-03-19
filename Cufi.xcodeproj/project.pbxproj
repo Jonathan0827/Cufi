@@ -6,12 +6,17 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		91E007382F6C0D4A0010D48E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 91E007372F6C0D4A0010D48E /* Alamofire */; };
+		91E0073D2F6C0D500010D48E /* LocalConsole in Frameworks */ = {isa = PBXBuildFile; productRef = 91E0073C2F6C0D500010D48E /* LocalConsole */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		919E2EF62F696CE3003D4970 /* Cufi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cufi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		919E2F092F696FC1003D4970 /* Exceptions for "Cufi" folder in "Cufi" target */ = {
+		91E007352F6C0B660010D48E /* Exceptions for "Cufi" folder in "Cufi" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -24,7 +29,7 @@
 		919E2EF82F696CE3003D4970 /* Cufi */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				919E2F092F696FC1003D4970 /* Exceptions for "Cufi" folder in "Cufi" target */,
+				91E007352F6C0B660010D48E /* Exceptions for "Cufi" folder in "Cufi" target */,
 			);
 			path = Cufi;
 			sourceTree = "<group>";
@@ -36,6 +41,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91E007382F6C0D4A0010D48E /* Alamofire in Frameworks */,
+				91E0073D2F6C0D500010D48E /* LocalConsole in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +85,8 @@
 			);
 			name = Cufi;
 			packageProductDependencies = (
+				91E007372F6C0D4A0010D48E /* Alamofire */,
+				91E0073C2F6C0D500010D48E /* LocalConsole */,
 			);
 			productName = Cufi;
 			productReference = 919E2EF62F696CE3003D4970 /* Cufi.app */;
@@ -107,6 +116,10 @@
 			);
 			mainGroup = 919E2EED2F696CE3003D4970;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				91E007362F6C0D4A0010D48E /* XCRemoteSwiftPackageReference "Alamofire" */,
+				91E0073B2F6C0D500010D48E /* XCLocalSwiftPackageReference "../EFB/LocalConsole-iOS18_crash_fix" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 919E2EF72F696CE3003D4970 /* Products */;
 			projectDirPath = "";
@@ -272,8 +285,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -308,8 +320,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -351,6 +362,36 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		91E0073B2F6C0D500010D48E /* XCLocalSwiftPackageReference "../EFB/LocalConsole-iOS18_crash_fix" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../EFB/LocalConsole-iOS18_crash_fix";
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		91E007362F6C0D4A0010D48E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.11.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		91E007372F6C0D4A0010D48E /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 91E007362F6C0D4A0010D48E /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		91E0073C2F6C0D500010D48E /* LocalConsole */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LocalConsole;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 919E2EEE2F696CE3003D4970 /* Project object */;
 }
